@@ -49,5 +49,16 @@
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "react",
+    "aws",
+    "dynamodb",
+    "splash",
+    "signin",
+    "login",
+    "account",
+    "otp",
+    "one time password"
   ]
 }
