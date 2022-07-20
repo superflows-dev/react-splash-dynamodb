@@ -10,19 +10,42 @@
 npm install --save react-splash-dynamodb
 ```
 
+## Overview
+
+This component checks if the email and token combination, provided as props exists and is valid in the backend. Result is returned in onSubmitResult.
+
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import MyComponent from 'react-splash-dynamodb'
-import 'react-splash-dynamodb/dist/index.css'
+import { Splash } from 'react-splash-dynamodb'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
+const App = () => {
+
+  function processCredentials(result) {
+    console.log(result);
   }
+
+  return  (
+  
+    <Splash  
+      imageUrl="https://****************/superflows_black.png" 
+      imageAlt="This is a test image"
+      onSubmitResult={processCredentials}
+      awsRegion="aws_region"
+      awsSecret="aws_secret"
+      awsKey="aws_key"
+      email="hrus*************le@gmail.com"
+      token="bde54a36-17fb-415d-bafa-f55452fe96c6"
+    />
+
+  )
 }
+
+export default App
+
 ```
 
 ## License
