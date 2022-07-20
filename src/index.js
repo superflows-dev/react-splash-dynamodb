@@ -3,9 +3,8 @@ import { useState } from "react";
 import { VSpace, InputOtp, LogoMast, AlertError, ButtonNext, ButtonTimer, AlertSuccess, InfoBlock, Footnote } from 'react-ui-components-superflows';
 import * as DynamoDB from  'react-dynamodb-helper';
 import { version } from '../package.json'
-
+import Services from './services';
 import { Col, Row, Button, Container } from 'react-bootstrap';
-
 import styles from './styles.module.css'
 
 export const Splash = (props) => {
@@ -14,25 +13,23 @@ export const Splash = (props) => {
 
     async function checkCredentials() {
 
-      var paramsCredentials = {
-        TableName: "Account_Credentials",
-        Key : { 
-            "email" : props.email,
-        }
-      };
+      const resultCredentials = await Services.getCredentials(props.awsRegion, props.awsSecret, props.awsKey, props.email);
 
-      let resultCredentials = await DynamoDB.getData(props.awsRegion, props.awsSecret, props.awsKey, paramsCredentials)
-      if(resultCredentials.Item == null) {
-        if(props.onSubmitResult != null) props.onSubmitResult(false);
-      } else {
-
+      if(resultCredentials.Item != null) {
         const tokens = resultCredentials.Item.tokens;
-        if(tokens.includes(props.token)) {
-          if(props.onSubmitResult != null) props.onSubmitResult(true);
-        } else {
+        if(tokens == null) {
           if(props.onSubmitResult != null) props.onSubmitResult(false);
+        } else {
+          if(tokens.includes(props.token)) {
+            if(props.onSubmitResult != null) props.onSubmitResult(true);
+          } else {
+            if(props.onSubmitResult != null) props.onSubmitResult(false);
+          }
         }
-
+        
+      } else {
+        
+        if(props.onSubmitResult != null) props.onSubmitResult(false);
       }
 
     }

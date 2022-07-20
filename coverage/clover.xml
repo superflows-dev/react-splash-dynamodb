@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1658323030983" clover="3.2.0">
+  <project timestamp="1658323030984" name="All files">
+    <metrics statements="17" coveredstatements="16" conditionals="14" coveredconditionals="10" methods="4" coveredmethods="4" elements="35" coveredelements="30" complexity="0" loc="17" ncloc="17" packages="1" files="2" classes="2"/>
+    <file name="index.js" path="/Users/admin/Documents/GitHub/react-splash-dynamodb/src/index.js">
+      <metrics statements="13" coveredstatements="13" conditionals="14" coveredconditionals="10" methods="3" coveredmethods="3"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="12" count="5" type="stmt"/>
+      <line num="16" count="5" type="stmt"/>
+      <line num="18" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="3" type="stmt"/>
+      <line num="20" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="23" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="24" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="26" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="32" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="37" count="5" type="stmt"/>
+      <line num="41" count="5" type="stmt"/>
+    </file>
+    <file name="services.js" path="/Users/admin/Documents/GitHub/react-splash-dynamodb/src/services.js">
+      <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
